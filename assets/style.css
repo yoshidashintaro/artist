@@ -1,0 +1,159 @@
+/* アーティスト診断｜アートメイクスタジオ大阪梅田院 — croissant.buzz版の見た目を再現 */
+:root{
+  --text:#6E635D;      /* rgb(110,99,93) */
+  --text-dark:#3B3532; /* rgb(59,53,50) */
+  --bg:#FAFAFA;
+  --option:#E6E6E6;
+  --dot:#D9D9D9;
+  --black:#000;
+  --orange:#FF6F00;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Noto Sans JP",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:14px;line-height:28px;color:var(--text);background:#F4F1EC;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+button{font-family:inherit}
+[hidden]{display:none!important}
+
+.page{background:var(--bg);min-height:100vh;display:flex;flex-direction:column}
+
+/* header */
+.header{background:#fff}
+.toolbar{display:flex;align-items:center;height:64px;padding:0 8px}
+.logo{height:36px;width:auto}
+.brand{margin:0 0 0 4px;font-size:12px;font-weight:600;line-height:18px;color:var(--text)}
+.bar{height:46px;background:var(--black)}
+
+/* main */
+.main{width:100%;max-width:768px;margin:0 auto;flex:1}
+.view{animation:fade .25s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* rich text */
+.rich{font-weight:500}
+.rich p{margin:0;line-height:28px;white-space:pre-wrap}
+.rich .rich-h1{margin:0;font-size:28px;font-weight:600;line-height:38px}
+.rich img{width:100%;height:auto;margin:0 auto}
+.center{text-align:center}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:44px;padding:8px 22px;border:0;border-radius:32px;
+  font-size:15px;font-weight:600;line-height:26.25px;cursor:pointer;
+  text-decoration:none;transition:opacity .2s,background-color .2s;
+}
+.btn-primary{background:var(--black);color:#fff}
+.btn-primary:hover{background:#333}
+.btn-primary:disabled{opacity:.38;cursor:default}
+.btn-gray{background:var(--option);color:var(--text)}
+.btn-gray:hover{background:#dcdcdc}
+.btn-block{width:100%}
+.btn svg{width:28px;height:28px;flex:none}
+.ico-end{margin:0 -16px 0 8px}
+.ico-start{margin:0 8px 0 -16px}
+
+/* top */
+.view-top{padding:48px 0}
+.top-image{background:#fff}
+.top-image img{width:100%;height:auto}
+.top-body{padding:0 20px;margin-top:48px}
+.policy-wrap{margin-top:48px}
+.policy{
+  height:200px;overflow-y:auto;padding:16px;background:#fff;
+  border:1px solid rgba(0,0,0,.12);border-radius:8px;
+  font-weight:400;white-space:pre-wrap;word-break:break-all;
+}
+.policy a{color:inherit}
+.consent{display:flex;align-items:center;justify-content:center;gap:4px;margin-top:32px;cursor:pointer;position:relative}
+.consent input{position:absolute;opacity:0;width:1px;height:1px}
+.consent-box{
+  width:20px;height:20px;margin:4px;border:1px solid var(--orange);border-radius:4px;
+  background:#fff;color:#fff;display:flex;align-items:center;justify-content:center;transition:background .15s;
+}
+.consent-box svg{width:12px;height:10px;opacity:0}
+.consent input:checked + .consent-box{background:var(--orange)}
+.consent input:checked + .consent-box svg{opacity:1}
+.consent input:focus-visible + .consent-box{outline:2px solid var(--orange);outline-offset:2px}
+.consent-label{font-size:14px;font-weight:400;line-height:normal;color:#373737}
+#start{margin-top:48px}
+
+/* question */
+.view-question{padding:32px;text-align:center;font-weight:500}
+.q-label{margin:0;font-family:Roboto,"Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:700;line-height:19.5px}
+.q-num{margin:0;font-family:Roboto,"Helvetica Neue",Arial,sans-serif;font-size:39px;font-weight:700;line-height:58.5px}
+.dots{display:flex;justify-content:center;gap:8px;padding:8px}
+.dots span{width:8px;height:8px;margin:0 2px;border-radius:50%;background:var(--dot)}
+.dots span.on{background:var(--black)}
+.q-title{margin:16px 0 0;font-size:15px;line-height:22.5px}
+.q-sub{margin:8px 0 0;font-size:13px;line-height:19.5px}
+.options{display:flex;flex-direction:column;gap:24px;margin-top:32px}
+.option{
+  display:flex;align-items:center;width:100%;min-height:48px;padding:12px;
+  background:var(--option);border:0;border-radius:32px;cursor:pointer;
+  color:var(--text);font-size:14px;font-weight:500;line-height:21px;text-align:left;
+  transition:opacity .15s;
+}
+.option:disabled{opacity:.5;cursor:default}
+.check{
+  flex:none;width:24px;height:24px;margin-right:8px;border-radius:4px;background:#fff;
+  display:flex;align-items:center;justify-content:center;color:#fff;
+}
+.check svg{width:16px;height:16px;opacity:0}
+.option.selected .check{background:var(--black)}
+.option.selected .check svg{opacity:1}
+.q-error{margin:16px 0 0;font-size:13px;color:#d32f2f;line-height:19.5px}
+.q-nav{display:flex;justify-content:center;gap:24px;margin-top:32px}
+
+/* bridge */
+.view-bridge{padding:48px 20px;text-align:center}
+.bridge-text{margin:0 0 32px;font-size:16px;font-weight:600;line-height:28px}
+.link-back{margin-top:24px;background:none;border:0;color:var(--text);font-size:14px;text-decoration:underline;cursor:pointer}
+
+/* result */
+.view-result{padding:40px 20px;display:flex;flex-direction:column;gap:40px}
+.result-heading{font-size:28px;font-weight:600;line-height:38px;text-align:center}
+.result-card{background:#fff;border-radius:8px;overflow:hidden}
+.result-image{width:100%;aspect-ratio:16/9;object-fit:cover}
+.result-body{padding:0 16px 16px}
+.result-inner{display:flex;flex-direction:column;gap:32px;padding:32px 0}
+.result-links{display:flex;flex-direction:column;gap:32px}
+.link-block{display:flex;flex-direction:column;gap:32px}
+.link-desc{padding:0 16px;text-align:center;font-weight:400}
+.link-desc p{margin:0;line-height:28px}
+.btn-link{
+  display:flex;align-items:center;justify-content:center;width:100%;height:44px;padding:0 24px;
+  background:var(--black);color:#fff;border-radius:9999px;text-decoration:none;
+  font-size:16px;font-weight:600;line-height:24px;transition:background .2s;
+}
+.btn-link:hover{background:#333}
+.share{background:#fff;border-radius:16px;padding:24px 8px}
+.share-title{font-size:16px;font-weight:600;line-height:24px;text-align:center;margin-bottom:16px}
+.share-icons{display:flex;justify-content:center;align-items:center;gap:24px;position:relative}
+.share-icons img{width:40px;height:40px}
+.share-circle{
+  width:40px;height:40px;border-radius:50%;border:0;padding:8px;color:#fff;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+.share-circle svg{width:22px;height:22px}
+.share-circle.fb{background:#1972EB}
+.share-circle.fb:hover{background:#4384F7}
+.share-circle.copy{background:#B3B3B3}
+.copied{position:absolute;top:46px;font-size:12px;line-height:18px;background:#333;color:#fff;padding:2px 8px;border-radius:4px}
+
+/* footer */
+.footer{background:#fff;padding:20px 24px}
+.footer-links{display:flex;justify-content:center;gap:16px;margin-top:4px}
+.footer-links a{font-size:12px;line-height:12px;color:var(--text);text-decoration:none}
+
+@media (max-width:600px){
+  .toolbar{height:45px}
+  .logo{height:28px}
+  .brand{font-size:10px;line-height:15px}
+  .footer{padding:12px 24px}
+  .view-question{padding:32px 20px}
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>アーティスト診断｜アートメイクスタジオ大阪梅田院</title>
+<meta name="description" content="今人気のアートメイク！&#10;簡単な質問に答えるだけであなたに最適なアーティストが分かる診断です。&#10;診断特典もあります♪">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="アーティスト診断｜アートメイクスタジオ大阪梅田院">
+<meta property="og:description" content="今人気のアートメイク！簡単な質問に答えるだけであなたに最適なアーティストが分かる診断です。診断特典もあります♪">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<!-- 公開URLが決まったら og:url と og:image を絶対URLに書き換えてください -->
+<meta property="og:url" content="">
+<meta property="og:image" content="images/ogp.jpg">
+<meta property="og:image:alt" content="アーティスト診断｜アートメイクスタジオ大阪梅田院">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="アーティスト診断｜アートメイクスタジオ大阪梅田院">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<!-- 計測タグ（GTM等）を入れる場合はここに貼り付けてください -->
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    <div class="toolbar">
+      <img class="logo" src="images/logo.webp" alt="アートメイクスタジオ大阪梅田院">
+      <p class="brand">アートメイクスタジオ大阪梅田院</p>
+    </div>
+  </header>
+  <div class="bar"></div>
+
+  <main class="main" id="app">
+    <!-- TOP -->
+    <section class="view view-top" id="view-top">
+      <div class="top-image"><img src="images/top.webp" alt="アーティスト診断"></div>
+      <div class="top-body">
+        <div class="rich center">
+          <h1 class="rich-h1">アーティスト診断</h1>
+          <p>アートメイクに興味はあるけど、</p>
+          <p>どのアーティストが自分に合っているのかって、</p>
+          <p>なかなかわかりにくいですよね。</p>
+          <p>このアーティスト診断では、３つの簡単な質問に答えるだけで、</p>
+          <p>あなたにピッタリなアーティストを診断しちゃいます！</p>
+          <p>アーティスト毎に診断特典もあるので、是非試してみてね♪</p>
+        </div>
+        <div class="policy-wrap">
+          <div class="policy" id="policy"></div>
+          <label class="consent">
+            <input type="checkbox" id="consent">
+            <span class="consent-box" aria-hidden="true"><svg viewBox="0 0 12 10"><polyline points="1.5 6 4.5 9 10.5 1" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+            <span class="consent-label">プライバシーポリシーに同意します。</span>
+          </label>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" id="start" disabled>
+          診断を始める<svg class="ico-end" viewBox="0 0 24 24"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- QUESTIONS -->
+    <section class="view view-question" id="view-question" hidden>
+      <p class="q-label">QUESTION</p>
+      <p class="q-num" id="q-num">1</p>
+      <div class="dots" id="dots"></div>
+      <p class="q-title" id="q-title"></p>
+      <p class="q-sub" id="q-sub" hidden></p>
+      <div class="options" id="options"></div>
+      <p class="q-error" id="q-error" hidden>回答を選択してください</p>
+      <div class="q-nav" id="q-nav">
+        <button type="button" class="btn btn-gray" id="prev"><svg class="ico-start" viewBox="0 0 24 24"><path d="M14 7l-5 5 5 5z" fill="currentColor"/></svg>戻る</button>
+        <button type="button" class="btn btn-primary" id="next">次へ<svg class="ico-end" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5z" fill="currentColor"/></svg></button>
+      </div>
+    </section>
+
+    <!-- BRIDGE -->
+    <section class="view view-bridge" id="view-bridge" hidden>
+      <p class="bridge-text">回答お疲れ様でした。<br>結果を確認しましょう。</p>
+      <button type="button" class="btn btn-primary btn-block" id="submit">診断結果を確認する</button>
+      <button type="button" class="link-back" id="back-to-answers">回答選択に戻る</button>
+    </section>
+
+    <!-- RESULT -->
+    <section class="view view-result" id="view-result" hidden>
+      <div class="result-heading">結果</div>
+      <div class="result-card">
+        <img class="result-image" id="result-image" src="" alt="">
+        <div class="result-body">
+          <div class="result-inner">
+            <div class="rich center" id="result-desc"></div>
+            <div class="result-links" id="result-links"></div>
+          </div>
+        </div>
+      </div>
+      <div class="share">
+        <div class="share-title">＼結果をSNSでシェア／</div>
+        <div class="share-icons">
+          <a id="share-x" target="_blank" rel="noopener"><img src="images/icon_x.png" alt="X" width="40" height="40"></a>
+          <a id="share-line" target="_blank" rel="noopener"><img src="images/icon_line.png" alt="LINE" width="40" height="40"></a>
+          <a id="share-fb" target="_blank" rel="noopener" class="share-circle fb" aria-label="Facebook"><svg viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+          <button type="button" id="share-copy" class="share-circle copy" aria-label="URLをコピー"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></button>
+          <span class="copied" id="copied" hidden>コピーしました</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="bar"></div>
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://coco-japan.s3.ap-northeast-1.amazonaws.com/croissant/terms_of_service.pdf" target="_blank" rel="noopener">利用規約</a>
+      <a href="https://coco-japan.s3.ap-northeast-1.amazonaws.com/croissant/privacy_policy.pdf" target="_blank" rel="noopener">プライバシーポリシー</a>
+    </div>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
